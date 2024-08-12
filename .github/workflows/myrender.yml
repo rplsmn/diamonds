@@ -1,7 +1,7 @@
 name: myrender.yml
 on: 
   push:
-job: 
+jobs: 
   myrender:
     runs-on: ubuntu-latest
     permissions: 
