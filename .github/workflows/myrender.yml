@@ -13,7 +13,8 @@ jobs:
           use-public-rspm: true 
       - uses: r-lib/actions/setup-r-dependencies@v2
       - name: Render RMD
-        run: Rscript rmarkdown::render("my_report.Rmd", output_dir = "docs")
+        shell: Rscript {0}
+        run: rmarkdown::render("my_report.Rmd", output_dir = "docs")
       - name: Publish to GitHub pages
         uses: JamesIves/github-pages-deploy-action@v4.5.0 
         with: 
