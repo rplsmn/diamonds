@@ -1,0 +1,33 @@
+---
+title: "RinProd Workshop"
+output: html_document
+date: "2024-08-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Libs
+
+```{r}
+library(ggplot2)
+library(lubridate)
+```
+
+# Date and time
+
+```{r}
+timenow <- Sys.time()
+# convert to San Francisco time zone
+timenow_tz_seattle <- with_tz(timenow, tzone = "America/Los_Angeles")
+```
+
+Time date and time in Seattle is `r timenow_tz_seattle`
+
+# Plot 
+
+```{r}
+ggplot(diamonds, aes(x=cut, y=clarity, size=carat)) + geom_point()
+```
+
